@@ -1,0 +1,226 @@
+$component: 'HolidayManager';
+
+.#{$component} {
+  &-body {
+    display: inline-block;
+  }
+
+  &-open-btn {
+    padding: 0.5rem 1rem;
+    background: #ffc107;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background: #ffb300;
+    }
+  }
+
+  &-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+  }
+
+  &-modal {
+    background: #2a2d35;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 700px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #3a3d45;
+  }
+
+  &-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #3a3d45;
+  }
+
+  &-modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  &-modal-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #8a8d95;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.2s;
+
+    &:hover {
+      background: #3a3d45;
+      color: #ffffff;
+    }
+  }
+
+  &-modal-content {
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+
+  &-add-form {
+    background: #3a3d45;
+    padding: 1.25rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+
+    h4 {
+      margin: 0 0 1rem 0;
+      font-size: 14px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  &-form-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  &-input {
+    flex: 1;
+    background: #2a2d35;
+    border: 1px solid #4a4d55;
+    color: #e0e0e0;
+    padding: 0.625rem;
+    border-radius: 6px;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+      border-color: #ffc107;
+    }
+  }
+
+  &-add-btn {
+    padding: 0.625rem 1.25rem;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background: #45a049;
+    }
+  }
+
+  &-hint {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 12px;
+    color: #8a8d95;
+  }
+
+  &-list {
+    h4 {
+      margin: 0 0 1rem 0;
+      font-size: 14px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  &-empty {
+    text-align: center;
+    color: #8a8d95;
+    padding: 2rem;
+    font-style: italic;
+  }
+
+  &-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background: #3a3d45;
+    border-radius: 6px;
+    border: 1px solid #4a4d55;
+  }
+
+  &-item-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+    font-weight: 600;
+    color: #ffc107;
+    font-size: 16px;
+  }
+
+  &-item-month {
+    font-size: 10px;
+    color: #8a8d95;
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+  }
+
+  &-item-name {
+    flex: 1;
+    color: #e0e0e0;
+    font-size: 14px;
+  }
+
+  &-item-year {
+    margin-left: 0.5rem;
+    font-size: 12px;
+    color: #8a8d95;
+  }
+
+  &-delete-btn {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+
+    &:hover {
+      background: #d32f2f;
+    }
+  }
+}

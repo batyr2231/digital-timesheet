@@ -1,0 +1,66 @@
+$component: 'Statistics';
+
+.#{$component} {
+  &-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #1a1d24;
+  }
+
+  &-card {
+    background: #2a2d35;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #3a3d45;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  &-label {
+    font-size: 11px;
+    color: #8a8d95;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  &-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  &-card--green &-value {
+    color: #4caf50;
+  }
+
+  &-card--yellow &-value {
+    color: #ffc107;
+  }
+
+  &-card--red &-value {
+    color: #f44336;
+  }
+}
+
+@media (max-width: 768px) {
+  .#{$component} {
+    &-body {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .#{$component} {
+    &-body {
+      grid-template-columns: 1fr;
+    }
+  }
+}

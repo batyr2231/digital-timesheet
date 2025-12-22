@@ -1,0 +1,148 @@
+$component: 'App';
+
+.#{$component} {
+  &-body {
+    min-height: 100vh;
+    background: #1a1d24;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-header {
+    background: #2a2d35;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #3a3d45;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  &-header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  &-period-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &-period {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 500;
+    min-width: 150px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  &-month-btn {
+    background: #3a3d45;
+    border: 1px solid #4a4d55;
+    color: #e0e0e0;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background: #4a4d55;
+    }
+
+    &--today {
+      background: #4caf50;
+      border-color: #4caf50;
+      color: white;
+
+      &:hover {
+        background: #45a049;
+      }
+    }
+  }
+
+  &-header-right {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &-load-btn {
+    padding: 0.5rem 1rem;
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+
+    &:hover {
+      background: #1976d2;
+    }
+  }
+
+  &-main {
+    flex: 1;
+    display: flex;
+    height: calc(100vh - 90px);
+  }
+
+  &-footer {
+    padding: 1rem;
+    text-align: center;
+    color: #5a5d65;
+    font-size: 12px;
+    background: #2a2d35;
+    border-top: 1px solid #3a3d45;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .#{$component} {
+    &-header {
+      padding: 1rem 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    &-header-left {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    &-title {
+      font-size: 18px;
+    }
+
+    &-period-controls {
+      width: 100%;
+    }
+
+    &-header-right {
+      width: 100%;
+      
+      > * {
+        flex: 1;
+      }
+    }
+  }
+}

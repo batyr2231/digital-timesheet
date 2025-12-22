@@ -1,0 +1,295 @@
+$component: 'TimesheetGrid';
+
+.#{$component} {
+  &-body {
+    background: #2a2d35;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #3a3d45;
+  }
+
+  &-wrapper {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  &-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1600px;
+  }
+
+  &-header {
+    padding: 1rem 0.75rem;
+    background: #3a3d45;
+    border-bottom: 1px solid #4a4d55;
+    font-weight: 600;
+    font-size: 11px;
+    text-align: center;
+    color: #8a8d95;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    &--photo {
+      min-width: 60px;
+    }
+
+    &--employee {
+      text-align: left;
+      min-width: 200px;
+      position: sticky;
+      left: 0;
+      background: #3a3d45;
+      z-index: 11;
+    }
+
+    &--company {
+      text-align: left;
+      min-width: 150px;
+    }
+
+    &--department {
+      text-align: left;
+      min-width: 100px;
+    }
+
+    &--schedule {
+      min-width: 80px;
+    }
+
+    &--object {
+      text-align: left;
+      min-width: 120px;
+    }
+
+    &--actions {
+      min-width: 180px;
+      text-align: center;
+    }
+
+    &--day {
+      min-width: 90px;
+      padding: 0.5rem 0.25rem;
+
+      &.weekend {
+        background: #4a4d55;
+      }
+    }
+
+    &--total {
+      min-width: 100px;
+      background: #3a3d45;
+      position: sticky;
+      right: 0;
+      border-left: 2px solid #4a4d55;
+    }
+  }
+
+  &-row {
+    transition: background-color 0.15s;
+
+    &:hover {
+      background-color: #33363e;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #3a3d45;
+    }
+  }
+
+  &-cell {
+    padding: 1rem 0.75rem;
+    text-align: center;
+    font-size: 14px;
+    color: #e0e0e0;
+    border-bottom: 1px solid #3a3d45;
+
+    &--photo {
+      padding: 0.75rem;
+    }
+
+    &--employee {
+      text-align: left;
+      position: sticky;
+      left: 0;
+      background: #2a2d35;
+      z-index: 5;
+    }
+
+    &--actions {  // ДОБАВИЛИ
+      text-align: center;
+      padding: 0.75rem;
+    } 
+
+    &--day {
+      &.weekend {
+        background: #33363e;
+      }
+    }
+
+    &--total {
+      background: #33363e;
+      font-weight: 500;
+      position: sticky;
+      right: 0;
+      border-left: 2px solid #4a4d55;
+      z-index: 5;
+    }
+  }
+
+  &-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #4a4d55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0 auto;
+  }
+
+  &-employeeInfo {
+    &-name {
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.25rem;
+      font-size: 14px;
+    }
+
+    &-position {
+      font-size: 12px;
+      color: #8a8d95;
+      font-weight: 400;
+    }
+  }
+
+  &-badge {
+    display: inline-block;
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+
+    &--schedule {
+      background: rgba(33, 150, 243, 0.2);
+      color: #2196f3;
+      border: 1px solid rgba(33, 150, 243, 0.3);
+    }
+  }
+
+  &-dayHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+
+    &-number {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    &-name {
+      font-size: 10px;
+      color: #8a8d95;
+      font-weight: 500;
+    }
+  }
+
+    &-schedule-indicator {
+    margin-top: 0.5rem;
+    font-size: 11px;
+    color: #4caf50;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &-attendanceMark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.15s;
+    min-height: 60px;
+    border: 1px solid transparent;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &-icon {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    &-time {
+      font-size: 10px;
+      line-height: 1.2;
+      font-weight: 500;
+
+      div {
+        &:first-child {
+          color: inherit;
+        }
+        &:last-child {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+.status-present {
+  background: rgba(76, 175, 80, 0.15);
+  border-color: #4caf50;
+  color: #4caf50;
+}
+
+.status-late {
+  background: rgba(255, 193, 7, 0.15);
+  border-color: #ffc107;
+  color: #ffc107;
+}
+
+.status-absent {
+  background: rgba(244, 67, 54, 0.15);
+  border-color: #f44336;
+  color: #f44336;
+}
+
+.status-vacation {
+  background: rgba(33, 150, 243, 0.15);
+  border-color: #2196f3;
+  color: #2196f3;
+}
+
+.status-sickleave {
+  background: rgba(156, 39, 176, 0.15);
+  border-color: #9c27b0;
+  color: #9c27b0;
+}
+
+.status-dayoff {
+  background: transparent;
+  border-color: #3a3d45;
+  color: #5a5d65;
+}
+
+.text-warning {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.text-danger {
+  color: #f44336;
+  font-weight: 600;
+}
