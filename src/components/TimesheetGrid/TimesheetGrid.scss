@@ -2,10 +2,16 @@ $component: 'TimesheetGrid';
 
 .#{$component} {
   &-body {
-    background: #2a2d35;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid #3a3d45;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: calc(100vh - 350px); // 350px = header + статистика + отступы
+  position: relative;
+  
+  table {
+    min-width: 1600px;
+    border-collapse: collapse;
+  }
   }
 
   &-wrapper {
@@ -38,12 +44,12 @@ $component: 'TimesheetGrid';
     }
 
     &--employee {
-      text-align: left;
-      min-width: 200px;
-      position: sticky;
-      left: 0;
-      background: #3a3d45;
-      z-index: 11;
+    text-align: left;
+    min-width: 200px;
+    position: sticky;
+    left: 0;
+    background: #3a3d45;
+    z-index: 11;
     }
 
     &--company {
@@ -80,11 +86,12 @@ $component: 'TimesheetGrid';
     }
 
     &--total {
-      min-width: 100px;
-      background: #3a3d45;
-      position: sticky;
-      right: 0;
-      border-left: 2px solid #4a4d55;
+    min-width: 100px;
+    background: #3a3d45;
+    position: sticky;
+    right: 0;
+    z-index: 10;
+    border-left: 2px solid #4a4d55;
     }
   }
 

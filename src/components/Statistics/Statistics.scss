@@ -3,35 +3,36 @@ $component: 'Statistics';
 .#{$component} {
   &-body {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    padding: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+    padding: 1rem;
     background: #1a1d24;
   }
 
   &-card {
     background: #2a2d35;
-    padding: 1rem;
-    border-radius: 8px;
     border: 1px solid #3a3d45;
-    transition: transform 0.2s;
-
+    border-radius: 6px; // Было 8px
+    padding: 0.75rem; // Было 1.5rem - уменьшили в 2 раза
+    transition: all 0.2s;
+    
     &:hover {
       transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
   }
 
   &-label {
-    font-size: 11px;
+    font-size: 10px; 
     color: #8a8d95;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem; 
     font-weight: 600;
   }
 
   &-value {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     color: #ffffff;
   }
